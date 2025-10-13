@@ -1,5 +1,4 @@
 
-
 1. **Сборка контрактов**  
 
 Сначала нужно собрать оба контракта:  
@@ -17,7 +16,7 @@ cargo build-sbf --manifest-path=code/called/Cargo.toml
 solana-test-validator
 ```
 
-> В сниппетах лежит усложнённая команда запуска валидатора, которая обходит проблемы WSL.
+> В sniped.md лежит усложнённая команда запуска валидатора, которая обходит проблемы WSL.
 
 3. **Деплой контрактов**
 
@@ -28,6 +27,8 @@ solana program deploy target/deploy/called.so
 solana program deploy target/deploy/caller.so
 ```
 
+> **Важно:** после деплоя замените переменные для `pubkey` смартконтрактов в тестах на актуальные адреса, которые вы получите после деплоя.
+
 4. **Запуск тестов**
 
 Для простоты можно запустить все тесты:
@@ -35,4 +36,3 @@ solana program deploy target/deploy/caller.so
 ```bash
 cargo test -- --nocapture
 ```
-
