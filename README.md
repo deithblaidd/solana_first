@@ -36,6 +36,3 @@ solana program deploy target/deploy/caller.so
 cargo test -- --nocapture
 ```
 
-
-Хочешь, чтобы я так сделал?
-```
