@@ -1,10 +1,9 @@
 use solana_client::{
     rpc_client::RpcClient,
-    rpc_config::RpcSendTransactionConfig,
-    rpc_response::RpcConfirmedTransactionStatusWithSignature,
+    rpc_config::{RpcSendTransactionConfig, RpcTransactionConfig},
 };
 use solana_sdk::{
-    commitment_config::CommitmentConfig,
+    commitment_config::{CommitmentConfig, CommitmentLevel},
     instruction::{self, Instruction, AccountMeta},
     message::Message,
     pubkey::Pubkey,
@@ -13,8 +12,6 @@ use solana_sdk::{
 };
 use solana_transaction_status::UiTransactionEncoding;
 use std::str::FromStr;
-use solana_client::rpc_config::RpcTransactionConfig;
-use solana_sdk::commitment_config::CommitmentLevel;
 use std::{thread, time::Duration};
 
 
@@ -61,13 +58,6 @@ async fn cross_programm_invocation(){
     println!("Transaction send:{}" , signature);
 
 
-let tx_config = RpcTransactionConfig {
-    encoding: Some(UiTransactionEncoding::Json),
-    commitment: Some(CommitmentConfig {
-        commitment: CommitmentLevel::Finalized,
-    }),
-    max_supported_transaction_version: None,
-};
 
 let confirmed = loop {
     match client.get_transaction_with_config(

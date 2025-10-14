@@ -16,7 +16,7 @@ cargo build-sbf --manifest-path=code/called/Cargo.toml
 solana-test-validator
 ```
 
-> В sniped.md лежит усложнённая команда запуска валидатора, которая обходит проблемы WSL.
+> В snippets.md лежит усложнённая команда запуска валидатора, которая обходит проблемы WSL.
 
 3. **Деплой контрактов**
 

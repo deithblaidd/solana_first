@@ -1,9 +1,8 @@
 use solana_program::{
     account_info::AccountInfo, 
-    address_lookup_table::instruction, 
     entrypoint,
     entrypoint::ProgramResult, 
-    instruction::{AccountMeta, Instruction}, 
+    instruction::Instruction, 
     msg, 
     program::invoke, 
     pubkey::Pubkey
