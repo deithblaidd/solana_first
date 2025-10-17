@@ -4,12 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-called = { path = "../code/called" }
-caller = { path = "../code/caller" }
+called = { path = "../code/called", features = ["disable-entrypoint"] }
+caller = { path = "../code/caller", features = ["disable-entrypoint"] }
 tokio = { workspace = true }
+solana-transaction-status = { workspace = true } 
+solana-program-test = { workspace = true }
 solana-sdk = { workspace = true }
-solana-client = { workspace = true }
-solana-transaction-status = { workspace = true }
-
-
+solana-client ={ workspace = true }
+solana-logger ={ workspace = true }
+solana-program ={ workspace = true }
 

@@ -1,6 +1,5 @@
 use solana_program::{
     account_info::AccountInfo, 
-    entrypoint,
     entrypoint::ProgramResult, 
     instruction::Instruction, 
     msg, 
@@ -10,6 +9,10 @@ use solana_program::{
 
 use std::convert::TryInto;
 
+#[cfg(not(feature = "disable-entrypoint"))]
+use solana_program::entrypoint;
+
+#[cfg(not(feature = "disable-entrypoint"))]
 entrypoint!(process_instruction);
 
 pub fn process_instruction(
